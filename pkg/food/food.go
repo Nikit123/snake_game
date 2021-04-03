@@ -2,7 +2,7 @@ package food
 
 import (
 	"math/rand"
-	"snake_game/board/cell"
+	"snake_game/pkg/board/cell"
 	"time"
 )
 

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"snake_game/actions"
-	"snake_game/board"
-	"snake_game/errorcatch"
-	"snake_game/snake"
+	"snake_game/pkg/actions"
+	"snake_game/pkg/board"
+	"snake_game/pkg/errorcatch"
+	"snake_game/pkg/snake"
 )
 
 func main() {

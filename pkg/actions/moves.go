@@ -2,10 +2,10 @@ package actions
 
 import (
 	"errors"
-	"snake_game/board"
-	"snake_game/errorcatch"
-	"snake_game/food"
-	"snake_game/snake"
+	"snake_game/pkg/board"
+	"snake_game/pkg/errorcatch"
+	"snake_game/pkg/food"
+	"snake_game/pkg/snake"
 )
 
 func ProcessMoveAction(moveDirection string, mySnake *snake.Snake, myBoard *board.GameBoard) (bool, bool) {

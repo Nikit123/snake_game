@@ -1,8 +1,6 @@
 package snake
 
-import (
-	"snake_game/board/cell"
-)
+import "snake_game/pkg/board/cell"
 
 type Snake struct {
 	Head         cell.GameCell

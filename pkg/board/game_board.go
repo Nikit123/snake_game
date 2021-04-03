@@ -3,9 +3,9 @@ package board
 import (
 	"errors"
 	"fmt"
-	"snake_game/board/cell"
-	"snake_game/food"
-	"snake_game/snake"
+	"snake_game/pkg/board/cell"
+	"snake_game/pkg/food"
+	"snake_game/pkg/snake"
 )
 
 type GameBoard struct {
