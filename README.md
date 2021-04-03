@@ -10,28 +10,28 @@ Day 3 (03/04/2021) - Building up from base, brainstormed various test cases, upd
 
 ## Assumptions and Instructions
 
-This game has used only signed integers for visualization, here:
+1. This game has used only signed integers for visualization, here:
 
--1 ===> Food
- 0 ===> Empty Space
- 1 ===> Snake's Head
- any +integer after 1 ===> part of Snake's body
+- -1 ===> Food
+-  0 ===> Empty Space
+-  1 ===> Snake's Head
+-  any +integer after 1 ===> part of Snake's body
 
--Dimensions for the 2D play area are user defined, although these cannot be less than 2 or greater than 100 for better visualizing inside console.
+2. Dimensions for the 2D play area are user defined, although these cannot be less than 2 or greater than 100 for better visualizing inside console.
 
--User can use usual w/a/s/d keys to move the snake around, where:
-w ===> Up
-a ===> Left
-s ===> Down
-d ===> Right
+3. User can use usual w/a/s/d keys to move the snake around, where:
+- w ===> Up
+- a ===> Left
+- s ===> Down
+- d ===> Right
 
 ## Win and Lose
 
 ### GAME OVER
 
-1.> Snake goes out of play area bounds/hits a wall.
-2.> Snake collides with itself/tries to go back on itself.
+- Snake goes out of play area bounds/hits a wall.
+- Snake collides with itself/tries to go back on itself.
 
 ### GAME WON
 
-1.> Snake occupies all the empty spaces (by eating food and growing).
+- Snake occupies all the empty spaces (by eating food and growing).
