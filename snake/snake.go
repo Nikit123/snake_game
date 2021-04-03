@@ -1,7 +1,6 @@
 package snake
 
 import (
-	"fmt"
 	"snake_game/board/cell"
 )
 
@@ -30,7 +29,6 @@ func CreateMySnake() Snake {
 }
 
 func (mySnake *Snake) UpdateSnake(targetLocation cell.GameCell, hasEaten bool) {
-	fmt.Println(mySnake)
 	mySnake.Body = append(mySnake.Body, mySnake.Head)
 	mySnake.Head.X = targetLocation.X
 	mySnake.Head.Y = targetLocation.Y
@@ -46,5 +44,4 @@ func (mySnake *Snake) UpdateSnake(targetLocation cell.GameCell, hasEaten bool) {
 			mySnake.Body = mySnake.Body[1:]
 		}
 	}
-	fmt.Println(mySnake)
 }
