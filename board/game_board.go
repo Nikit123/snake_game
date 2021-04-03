@@ -12,12 +12,14 @@ type GameBoard struct {
 	Length  int
 	Breadth int
 	Data    [][]cell.GameCell
+	Round   int
+	Score   int
 }
 
 func CreateMyGameBoard(l int, b int) (GameBoard, error) {
 	var g GameBoard
 	if l < 2 || b < 2 {
-		return g, errors.New("length and breadth of the play area cannot be less than 2")
+		return g, errors.New("invalid dimensions")
 	}
 	g.Length = l
 	g.Breadth = b
@@ -31,11 +33,12 @@ func CreateMyGameBoard(l int, b int) (GameBoard, error) {
 		}
 	}
 	g.Data = grid
-	g.InitializeGameBoard()
 	return g, nil
 }
 
 func (g GameBoard) Visualize() {
+	fmt.Printf("------------------- Round %d -------------------\n", g.Round)
+	fmt.Printf("------------------- Score %d -------------------\n", g.Score)
 	data := g.Data
 	for i := 0; i < g.Length; i++ {
 		for j := 0; j < g.Breadth; j++ {
@@ -46,18 +49,14 @@ func (g GameBoard) Visualize() {
 }
 
 func (g *GameBoard) UpdateSnakeOnBoard(s snake.Snake) {
+	if s.PreviousTail.X > -1 && s.PreviousTail.Y > -1 {
+		g.Data[s.PreviousTail.X][s.PreviousTail.Y].Status = 0
+	}
 	g.Data[s.Head.X][s.Head.Y].Status = s.Head.Status
 	for i := range s.Body {
 		g.Data[s.Body[i].X][s.Body[i].Y].Status = s.Body[i].Status
 	}
 	g.Data[s.Tail.X][s.Tail.Y].Status = s.Tail.Status
-}
-
-func (g *GameBoard) InitializeGameBoard() {
-	mySnake := snake.CreateMySnake()
-	g.UpdateSnakeOnBoard(mySnake)
-	food := food.CreateFood(g.Data)
-	g.UpdateFoodOnBoard(food)
 }
 
 func (g *GameBoard) UpdateFoodOnBoard(f food.Food) {
