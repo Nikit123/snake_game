@@ -8,6 +8,7 @@ import (
 	"snake_game/pkg/snake"
 )
 
+/*Check for user provided move direction and update board accordingly*/
 func ProcessMoveAction(moveDirection string, mySnake *snake.Snake, myBoard *board.GameBoard) (bool, bool) {
 	gameWon := false
 	gameOver := false
@@ -24,6 +25,7 @@ func ProcessMoveAction(moveDirection string, mySnake *snake.Snake, myBoard *boar
 	return gameWon, gameOver
 }
 
+/* W - Up Move*/
 func ProcessUpMove(mySnake *snake.Snake, myBoard *board.GameBoard) (bool, bool) {
 	if mySnake.Head.X-1 < 0 {
 		errorcatch.ReportError(errors.New("wall collision"))
@@ -55,6 +57,7 @@ func ProcessUpMove(mySnake *snake.Snake, myBoard *board.GameBoard) (bool, bool) 
 	return false, false
 }
 
+/* S - Down Move*/
 func ProcessDownMove(mySnake *snake.Snake, myBoard *board.GameBoard) (bool, bool) {
 	if mySnake.Head.X+1 > myBoard.Length-1 {
 		errorcatch.ReportError(errors.New("wall collision"))
@@ -86,6 +89,7 @@ func ProcessDownMove(mySnake *snake.Snake, myBoard *board.GameBoard) (bool, bool
 	return false, false
 }
 
+/* A - Left Move*/
 func ProcessLeftMove(mySnake *snake.Snake, myBoard *board.GameBoard) (bool, bool) {
 	if mySnake.Head.Y-1 < 0 {
 		errorcatch.ReportError(errors.New("wall collision"))
@@ -117,6 +121,7 @@ func ProcessLeftMove(mySnake *snake.Snake, myBoard *board.GameBoard) (bool, bool
 	return false, false
 }
 
+/* D - Right Move*/
 func ProcessRightMove(mySnake *snake.Snake, myBoard *board.GameBoard) (bool, bool) {
 	if mySnake.Head.Y+1 > myBoard.Breadth-1 {
 		errorcatch.ReportError(errors.New("wall collision"))

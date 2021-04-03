@@ -5,7 +5,7 @@ import "fmt"
 func ReportError(err error) {
 	switch err.Error() {
 	case "invalid dimensions":
-		fmt.Println("Length and Breadth of play area cannot be less than 2.")
+		fmt.Println("Length and Breadth of play area cannot be less than 2 or greater than 100.")
 	case "invalid move":
 		fmt.Println("Please enter a valid move from w/a/s/d.")
 	case "wall collision":

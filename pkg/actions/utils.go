@@ -30,6 +30,7 @@ func RequestAction() (string, error) {
 	}
 }
 
+/*Put initial food and snake on board*/
 func InitializeGame(myBoard *board.GameBoard, mySnake *snake.Snake) {
 	myBoard.UpdateSnakeOnBoard(*mySnake)
 	myFood := food.CreateFood(myBoard.Data)
@@ -44,6 +45,7 @@ func CalculateScore(mySnake snake.Snake) int {
 	return score
 }
 
+/*Main game iterations/rounds*/
 func StartGame(myBoard *board.GameBoard, mySnake *snake.Snake) (bool, bool) {
 	fmt.Println("-------------------GAME START-------------------")
 	gameOver := false

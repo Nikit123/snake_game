@@ -18,7 +18,7 @@ type GameBoard struct {
 
 func CreateMyGameBoard(l int, b int) (GameBoard, error) {
 	var g GameBoard
-	if l < 2 || b < 2 {
+	if l < 2 || b < 2 || l > 100 || b > 100 {
 		return g, errors.New("invalid dimensions")
 	}
 	g.Length = l
@@ -36,6 +36,7 @@ func CreateMyGameBoard(l int, b int) (GameBoard, error) {
 	return g, nil
 }
 
+/*Print game board*/
 func (g GameBoard) Visualize() {
 	fmt.Printf("------------------- Round %d -------------------\n", g.Round)
 	fmt.Printf("------------------- Score %d -------------------\n", g.Score)

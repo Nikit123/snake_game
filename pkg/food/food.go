@@ -11,6 +11,7 @@ type Food struct {
 }
 
 func CreateFood(allCells [][]cell.GameCell) Food {
+	/*Look for empty cells*/
 	var emptyCells []cell.GameCell
 
 	for i := range allCells {
@@ -21,6 +22,7 @@ func CreateFood(allCells [][]cell.GameCell) Food {
 		}
 	}
 
+	/*Pick up a random empty cell*/
 	var food Food
 	rand.Seed(time.Now().Unix())
 	food.Location = emptyCells[rand.Intn(len(emptyCells))]
