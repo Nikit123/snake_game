@@ -1,13 +1,5 @@
 # snake_game
 
-## TimeLine
-
-Day 1 (30/03/2021) - Brushed up Go, went through requirement docs and Idiomatic Go practises. Started creating basic structure of project on paper, installed required tools. Set up project on git.
-
-Day 2 (02/04/2021) - Started building the base state for project, created required packages, finished with board display and snake,food initializations.
-
-Day 3 (03/04/2021) - Building up from base, brainstormed various test cases, updated error handling, modified directories for better implementation, testing, added comments for better understanding, added make file.
-
 ## Assumptions and Instructions
 
 1. This game has used only signed integers for visualization, here:
